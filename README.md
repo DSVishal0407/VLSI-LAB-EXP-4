@@ -1,13 +1,16 @@
-# SIMULATION AND IMPLEMENTATION OF SEQUENTIAL LOGIC CIRCUITS
+**SIMULATION AND IMPLEMENTATION OF SEQUENTIAL LOGIC CIRCUITS**
 
-## AIM: 
+**AIM:**
+
 To simulate and synthesis SR, JK, T, D - FLIPFLOP, COUNTER DESIGN using Xilinx ISE.
 
-## APPARATUS REQUIRED:
+**APPARATUS REQUIRED:**
+
 Xilinx 14.7
 Spartan6 FPGA
 
-## PROCEDURE:
+**PROCEDURE:**
+
 STEP:1  Start  the Xilinx navigator, Select and Name the New project.
 STEP:2  Select the device family, device, package and speed.       
 STEP:3  Select new source in the New Project and select Verilog Module as the Source type.                       
@@ -20,12 +23,14 @@ STEP:9  In the Design Object List Window, enter the pin location for each pin in
 STEP:10 Double click on the Implement Design and double click on the Generate Programming File to create a bitstream of the design.(.v) file is converted into .bit file here.
 STEP:11  On the board, by giving required input, the LEDs starts to glow light, indicating the output.
 
-## SR FLIPFLOP:
+**SR FLIPFLOP:**
 
-### TRUTH TABLE:
+**TRUTH TABLE:**
+
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-4/assets/6987778/77fb7f38-5649-4778-a987-8468df9ea3c3)
 
-### VERILOG CODE:
+**VERILOG CODE:**
+
 ```
 module srff(s,r,clk,rst,q);
 input s,r,clk,rst;
@@ -46,15 +51,18 @@ end
 end
 endmodule
 ```
-### OUTPUT WAVEFORM:
+**OUTPUT WAVEFORM:**
+
 ![image](https://github.com/DSVishal0407/VLSI-LAB-EXP-4/assets/163637297/30cceb50-ed81-4180-ba0c-a03d9bfb637f)
 
-## JK FLIPFLOP:
+**JK FLIPFLOP:**
 
-### TRUTH TABLE:
+**TRUTH TABLE:**
+
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-4/assets/6987778/1510e030-4ddc-42b1-88ce-d00f6f0dc7e6)
 
-### VERILOG CODE:
+**VERILOG CODE:**
+
 ```
 module jkff(j,k,clk,rst,q);
 input j,k,clk,rst;
@@ -76,15 +84,18 @@ end
 endmodule
 ```
 
-### OUTPUT WAVEFORM:
+**OUTPUT WAVEFORM:**
+
 ![image](https://github.com/DSVishal0407/VLSI-LAB-EXP-4/assets/163637297/ca9b98ec-5e8a-4657-8577-eacd8b4cba41)
 
-## T FLIPFLOP:
+**T FLIPFLOP:**
 
-### TRUTH TABLE:
+**TRUTH TABLE:**
+
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-4/assets/6987778/7a020379-efb1-4104-85ee-439d660baa08)
 
-### VERILOG CODE:
+**VERILOG CODE:**
+
 ```
 module tff(clk,rst,t,q);
 input clk,rst,t;
@@ -100,15 +111,18 @@ q=~q;
 end
 endmodule
 ```
-### OUTPUT WAVEFORM:
+**OUTPUT WAVEFORM:**
+
 ![image](https://github.com/DSVishal0407/VLSI-LAB-EXP-4/assets/163637297/3fa1e0ce-8c6b-4bc8-8e9b-01db694fc2f5)
 
-## D FLIPFLOP:
+**D FLIPFLOP:**
 
-### TRUTH TABLE:
+**TRUTH TABLE:**
+
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-4/assets/6987778/dda843c5-f0a0-4b51-93a2-eaa4b7fa8aa0)
 
-### VERILOG CODE:
+**VERILOG CODE:**
+
 ```
 module dff(d,clk,rst,q);
 input d,clk,rst;
@@ -123,16 +137,20 @@ end
 endmodule
 ```
 
-### OUTPUT WAVEFORM:
+**OUTPUT WAVEFORM:**
+
 ![image](https://github.com/DSVishal0407/VLSI-LAB-EXP-4/assets/163637297/1add7d64-0b35-468f-b0a6-6a273c939a6b)
 
-## COUNTER:
+**COUNTER:**
 
-### TRUTH TABLE:
+**TRUTH TABLE:**
+
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-4/assets/6987778/a1fc5f68-aafb-49a1-93d2-779529f525fa)
 
-### VERILOG CODE:
-### updown Counter:
+**VERILOG CODE:**
+
+**updown Counter:**
+
 ```
 module updown(clk,rst,updown,out);
 input clk,rst,updown;
@@ -148,7 +166,12 @@ out=out-1;
 end
 endmodule
 ```
-### Mod 10 Counter:
+**OUTPUT WAVEFORM:**
+
+![image](https://github.com/DSVishal0407/VLSI-LAB-EXP-4/assets/163637297/ac6b26c7-8f24-41ce-8c1e-50f55bd24a66)
+
+**Mod 10 Counter:**
+
 ```
 module mod10(clk,rst,out);
 input clk,rst;
@@ -162,7 +185,12 @@ out=out+1;
 end
 endmodule
 ```
-### Ripple Counter:
+**OUTPUT WAVEFORM:**
+
+![image](https://github.com/DSVishal0407/VLSI-LAB-EXP-4/assets/163637297/06b4e3c2-9630-46de-8d70-b84c563e45ce)
+
+**Ripple Counter:**
+
 ```
 module tff(q,clk,rst);
 input clk,rst;
@@ -194,16 +222,11 @@ tff tf4(q[3],q[2],rst);
 endmodule
 ```
 
-### OUTPUT WAVEFORM:
-### UPDOWN COUNTER:
-![image](https://github.com/DSVishal0407/VLSI-LAB-EXP-4/assets/163637297/ac6b26c7-8f24-41ce-8c1e-50f55bd24a66)
+**OUTPUT WAVEFORM:**
 
-### Mod 10 counter:
-![image](https://github.com/DSVishal0407/VLSI-LAB-EXP-4/assets/163637297/06b4e3c2-9630-46de-8d70-b84c563e45ce)
-
-### Ripple counter:
 ![image](https://github.com/DSVishal0407/VLSI-LAB-EXP-4/assets/163637297/0e48cc4f-e8c8-4953-a86c-4dbd972b67ab)
 
-## RESULT:
+**RESULT:**
+
 Hence SR, JK, T, D - FLIPFLOP, COUNTER DESIGNS are simulated and synthesised using Xilinx ISE.
 
